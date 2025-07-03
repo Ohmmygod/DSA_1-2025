@@ -24,7 +24,12 @@ public class Lab0_670764 {
 		int k;
 		for (int j = 0; j < beams.size(); j++) {
 			k = 1;
-			if (beams[j][k] 		
+			// use List<int[]> in this loop will be better
+			if (beams[j][k] >= beams[j][k-1])  // <-- this is an overlap case
+			{
+				
+			}
+				
 		}
 	}
 
