@@ -1,36 +1,43 @@
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Array;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class Lab0_670764 {
 	public static void main(String[] args) {
 		demo_1();
 	}
 
-	static void mergeBeams(List<int[]> beams) {
+	static List<int []> mergeBeams(List<int[]> beams) {
 
-		// step 1: linearized
-		int i = 0;
-		for (int[] beam : beams) {
-			if (beam[i] > beam[i+1])
-				beam[i+1] += 360;
+		for (int [] beam : beams) {
+			if (beam[0] > beam[1])
+				beam[1] += 360;
 		}
 
-		// step 2: sort
-		Collections.sort(beams , (a, b -> a[0] - b[0]);
+		Collections.sort(beams, (a, b) -> a[0] - b[0]);
 
-		// step 3: Merge overlapping intervals
-		int k;
-		for (int j = 0; j < beams.size(); j++) {
-			k = 1;
-			// use List<int[]> in this loop will be better
-			if (beams[j][k] >= beams[j][k-1])  // <-- this is an overlap case
+		List<int []> merged = new ArrayList<>();
+		int start = -1;
+		int end = -1;
+
+		for (int [] beam : beams) {
+			if (start == -1)
 			{
-				
+				start = beam[0];
+				end = beam[1];
 			}
-				
+			else if (beam[0] <= end)
+				end = Math.max(end, beam[1]);
+			else
+			{
+				merged.add(new int[]{start % 360, end % 360});
+				start = beam[0];
+				end = beam[1];
+			}
 		}
+		merged.add(new int[]{start % 360, end % 360});
+		return merged;
 	}
 
 	static void demo_1() {
