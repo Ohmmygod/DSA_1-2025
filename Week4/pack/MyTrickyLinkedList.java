@@ -9,8 +9,9 @@ public class MyTrickyLinkedList  extends MyLinkedList_670764 {
 		if (head == null || k == 0) return;
 	
 		int n = size();
-		k = k % n;
-		if (k == 0) return;
+		if (k > n)
+			return ;
+		if (k == n) return;
 
 		Node cur = head;
 		for (int i = 1; i < n - k; i++)
