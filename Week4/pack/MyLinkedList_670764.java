@@ -115,6 +115,7 @@ public class MyLinkedList_670764 {
 		}
 	}
 
+	@Override
 	public String toString() {
 		StringBuilder bd = new StringBuilder();
 		bd.append("[");
@@ -128,7 +129,6 @@ public class MyLinkedList_670764 {
 		return bd.toString();
 	}
 
-	// task 2
 	public void add (int[] d) {
 		for (int i = d.length - 1; i >= 0; i--)
 			add(d[i]);

@@ -5,26 +5,23 @@ public class MyTrickyLinkedList  extends MyLinkedList_670764 {
 		super();
 	}
 
-	public void q1_rotate_counter_clockwise(int k) {
-		if (head == null || k <= 0) return;
-
+	public void q1_rotate_clockwise(int k) {
+		if (head == null || k == 0) return;
+	
 		int n = size();
 		k = k % n;
 		if (k == 0) return;
-	
+
 		Node cur = head;
-		for (int i = 1; i < k; i++) {
+		for (int i = 1; i < n - k; i++)
 			cur = cur.next;
-		}
 		Node newHead = cur.next;
-		if (newHead == null) return;
+		cur.next = null;
 	
 		Node tail = newHead;
-		while (tail.next != null) {
+		while (tail.next != null)
 			tail = tail.next;
-		}
 		tail.next = head;
-		cur.next = null;
 		head = newHead;
 	}
 

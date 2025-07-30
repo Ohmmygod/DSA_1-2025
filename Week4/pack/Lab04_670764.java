@@ -32,11 +32,11 @@ public class Lab04_670764 {
         MyTrickyLinkedList lis = new MyTrickyLinkedList();
         lis.insert(d);
         System.out.println("before -> " + lis);
-        lis.q1_rotate_counter_clockwise(4);
+        lis.q1_rotate_clockwise(4);
         System.out.println("(k= " + 4 + ") -> " + lis);
-        lis.q1_rotate_counter_clockwise(7);
+        lis.q1_rotate_clockwise(7);
         System.out.println("(k= " + 7 + ") -> " + lis);
-        lis.q1_rotate_counter_clockwise(1);
+        lis.q1_rotate_clockwise(1);
         System.out.println("(k= " + 1 + ") -> " + lis); 
         System.out.println("==================");
     }
