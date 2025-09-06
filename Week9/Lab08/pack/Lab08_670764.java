@@ -1,10 +1,8 @@
-package Lab08;
+package Lab08.pack;
 import java.util.Arrays;
 
-import Lab08.pack.*;
-
 public class Lab08_670764 {
-    // int[] arr = {42,17,-5,88,23,91,-12,65,7,30,55,-9,2,48,76,1,-22,99,14,61,37,83,-18,50,29,72,6,40,-3,95,11,68};
+    int[] arr = {42,17,-5,88,23,91,-12,65,7,30,55,-9,2,48,76,1,-22,99,14,61,37,83,-18,50,29,72,6,40,-3,95,11,68};
     static void task_1() {
         int[] arr = {42,17,-5,88,23,91,-12,65,7,30,55,-9,2,48,76,1,-22,99,14,61,37,83,-18,50,29,72,6,40,11,68}; // -3, 95
         MyMergeSort_670764 sol = new MyMergeSort_670764();
@@ -24,9 +22,33 @@ public class Lab08_670764 {
             left_value = Math.min(left_value, arr[i]);
             right_value = Math.max(right_value, arr[i]);
         }
-        /* your code */        
-        
+		
+        int low = 0;
+		int mid = 0;
+		int high = arr.length - 1;
+		
+		while (mid <= high)
+		{
+			if (arr[mid] == left_value)
+			{
+				swap(arr[low], arr[high]);
+				low++; mid++;
+			}
+			else if (arr[mid] == right_value)
+			{
+				swap(arr[mid], arr[high]);
+				high--;
+			}
+			else
+				mid++;
+		}
     }
+
+	static void swap(int a, int b) {
+		int tmp = a;
+		a = b;
+		b = tmp;
+	}
     static void task_3() {
                   // R B W W B B R W W R R W R B W
         int[] arr = {1,0,2,2,0,0,1,2,2,1,1,2,1,0,2};
@@ -51,7 +73,7 @@ public class Lab08_670764 {
     public static void main(String[] args) {
         // task_1();
         // task_2();
-        // task_3();
+        task_3();
         // task_4();
     }
 }
