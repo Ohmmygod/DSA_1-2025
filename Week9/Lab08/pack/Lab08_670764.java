@@ -27,27 +27,23 @@ public class Lab08_670764 {
 		int mid = 0;
 		int high = arr.length - 1;
 		
-		while (mid <= high)
-		{
-			if (arr[mid] == left_value)
-			{
-				swap(arr[low], arr[high]);
+		while (mid <= high) {
+			if (arr[mid] == left_value) {
+				swap(arr, low, mid);
 				low++; mid++;
-			}
-			else if (arr[mid] == right_value)
-			{
-				swap(arr[mid], arr[high]);
+			} else if (arr[mid] == right_value) {
+				swap(arr, mid, high);
 				high--;
-			}
-			else
+			} else {
 				mid++;
+			}
 		}
-    }
+	}
 
-	static void swap(int a, int b) {
-		int tmp = a;
-		a = b;
-		b = tmp;
+	static void swap(int [] arr, int i, int j) {
+		int tmp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tmp;
 	}
     static void task_3() {
                   // R B W W B B R W W R R W R B W
