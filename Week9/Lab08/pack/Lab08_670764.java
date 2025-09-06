@@ -62,7 +62,17 @@ public class Lab08_670764 {
             max = Math.max(max, arr[i]);
         }
         int[] count = new int[max - min + 1];
-        /* your code */
+        if (k < 1 || k > arr.length) return -1;
+		int	offset = -min;
+		for (int v : arr)
+			count[v + offset]++;
+		
+		int cumulative = 0;
+		for (int i = 0; i < count.length; i++) {
+			cumulative += count[i];
+			if (cumulative >= k)
+				return i + min;
+		}
         return -1; // exception
     }
     static void task_4() {
@@ -73,6 +83,6 @@ public class Lab08_670764 {
         // task_1();
         // task_2();
         // task_3();
-        // task_4();
+        task_4();
     }
 }
