@@ -50,6 +50,7 @@ public class Lab08_670764 {
         int[] arr = {1,0,2,2,0,0,1,2,2,1,1,2,1,0,2};
         dutch_national_flag(arr);
         System.out.println(Arrays.toString(arr));
+		
 		int [] arr1 = {-1,0,-2,-2,0,0,-1,-2,-2,-1,-1,-2,-1,0,-2};
 		dutch_national_flag(arr1);
         System.out.println(Arrays.toString(arr1));
@@ -83,6 +84,6 @@ public class Lab08_670764 {
         // task_1();
         // task_2();
         // task_3();
-        task_4();
+        // task_4();
     }
 }
