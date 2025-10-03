@@ -1,10 +1,9 @@
 package Lab12ab.pack;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Set;
-
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class GraphNode_670764 {
     private List<Node> nodes;
@@ -15,7 +14,7 @@ public class GraphNode_670764 {
 
     public Node addNode(int value) {
         Node node = new Node(value);
-        /* your code 7 */ 
+        nodes.add(node); /* <- your code 7 */ 
         return node;
     }
 
@@ -34,8 +33,12 @@ public class GraphNode_670764 {
     }
 
     private Node getNode(int value) {
-        /* your code 8 begin */ 
-
+        /* your code 8 begin */
+        for (Node n : nodes)
+        {
+            if (n.value == value)
+                return n;
+        }
         /* your code 8 end */ 
         return null;
     }

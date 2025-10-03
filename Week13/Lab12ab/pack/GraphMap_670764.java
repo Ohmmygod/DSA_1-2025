@@ -99,8 +99,7 @@ public class GraphMap_670764 {
         Set<Integer> visited = new HashSet<>();
         for (int v : graph.keySet()) {
             if (!visited.contains(v)) {
-                /* your code 6 */
-				
+				dfsHelper(v, visited); /* <- your code 6 */
                 System.out.println(); // newline after each component
             }
         }
@@ -130,12 +129,12 @@ private boolean hasCycleDFS(int current, int parent, Set<Integer> visited) {
     for (int neighbor : graph.get(current)) {
         if (!visited.contains(neighbor)) {
             // explore deeper
-            if (true /* your code 10 */) {
+            if (hasCycleDFS(neighbor, current, visited)) {
                 return true;
             }
         } else if (neighbor != parent) {
             // found a back edge -> cycle
-            return false /* your code 11 */;
+            return true;
         }
     }
     return false;
