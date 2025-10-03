@@ -4,7 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class GraphList_670764 {
-    private int vertices;    // จำนวน vertices 
+    
+    private int vertices; 
     private List<Integer>[] adjacencyList;
 
     public GraphList_670764(int vertices) {
@@ -34,13 +35,12 @@ public class GraphList_670764 {
         }
         return adjacencyList[n1].contains(n2);
     }
-
             // 0 -> 1 4 
             // 1 -> 0 2 3
             // 2 -> 1
             // 3 -> 1
             // 4 -> 0  
-                    //    from  0  to  3 dai rue mai?
+
     public boolean hasPath(int n1, int n2) {
         if (n1 < 0 || n1 >= vertices || n2 < 0 || n2 >= vertices) {
             return false;
